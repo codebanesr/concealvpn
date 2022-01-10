@@ -11,9 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.applesauce.concealvpn.R;
 import com.applesauce.concealvpn.interfaces.NavObjectClickListener;
 import com.applesauce.concealvpn.model.VpnServer;
+import com.applesauce.concealvpn.utils.R;
 
 import java.util.ArrayList;
 

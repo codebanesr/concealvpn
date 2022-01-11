@@ -1,8 +1,9 @@
 package com.applesauce.concealvpn.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@Data
+@Data @AllArgsConstructor
 public class VpnServer {
     private String country, flag, username, ovpn, password;
 

@@ -23,6 +23,8 @@ import com.applesauce.concealvpn.databinding.FragmentMainBinding;
 import com.applesauce.concealvpn.model.VpnServer;
 import com.applesauce.concealvpn.utils.VpnState;
 import com.applesauce.concealvpn.utils.SharedPreference;
+import com.bumptech.glide.Glide;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -44,7 +46,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentMainBinding.inflate(getLayoutInflater());
 
-        View view = binding.getRoot();
+        View view = binding.root;
         pref = new SharedPreference(getContext());
         server = pref.getServer();
 
@@ -130,10 +132,10 @@ public class MainFragment extends Fragment implements View.OnClickListener{
     };
 
     private void setConnectionMetrics(String duration, String lastPacketReceived, String byteIn, String byteOut) {
-        binding.durationTv.setText("Duration", duration);
-        binding.lastPacketReceivedTv.setText("Last Packet Received", lastPacketReceived);
-        binding.byteInTv.setText("Byte In", byteIn);
-        binding.byteOut.setText("Byte Out", byteOut);
+        binding.duration.setText("Duration");
+        binding.lastPacketReceived.setText("Last Packet Received");
+        binding.byteInTv.setText("Byte In");
+        binding.byteOut.setText("Byte Out");
     }
 
     private void setVpnState(String state) {

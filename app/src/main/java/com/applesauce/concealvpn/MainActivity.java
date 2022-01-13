@@ -1,5 +1,7 @@
 package com.applesauce.concealvpn;
 
+import static com.applesauce.concealvpn.utils.Helper.getResourceAsUrl;
+
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -106,15 +108,10 @@ public class MainActivity extends AppCompatActivity implements NavObjectClickLis
 
     private ArrayList<VpnServer> getServersList() {
         ArrayList<VpnServer> servers = new ArrayList<>();
-        servers.add(new VpnServer("US", getStringAsUrl(R.drawable.us_flag), "us.ovpn", "vpn", "vpn"));
-        servers.add(new VpnServer("JAPAN", getStringAsUrl(R.drawable.japan_flag), "japan.ovpn", "vpn", "vpn"));
-        servers.add(new VpnServer("KOREA", getStringAsUrl(R.drawable.korea_flag), "korea.ovpn", "vpn", "vpn"));
-        servers.add(new VpnServer("SWEDEN", getStringAsUrl(R.drawable.sweden_flag), "sweden.ovpn", "vpn", "vpn"));
+        servers.add(new VpnServer("US", getResourceAsUrl(R.drawable.us_flag), "us.ovpn", "vpn", "vpn"));
+        servers.add(new VpnServer("JAPAN", getResourceAsUrl(R.drawable.japan_flag), "japan.ovpn", "vpn", "vpn"));
+        servers.add(new VpnServer("KOREA", getResourceAsUrl(R.drawable.korea_flag), "korea.ovpn", "vpn", "vpn"));
+        servers.add(new VpnServer("SWEDEN", getResourceAsUrl(R.drawable.sweden_flag), "sweden.ovpn", "vpn", "vpn"));
         return servers;
-    }
-
-
-    private static String getStringAsUrl(int res) {
-        return String.valueOf(Uri.parse("android.resource://com.applesauce.concealvpn/" + res));
     }
 }

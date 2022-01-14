@@ -20,7 +20,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import com.applesauce.concealvpn.R;
 import com.applesauce.concealvpn.databinding.FragmentMainBinding;
+import com.applesauce.concealvpn.interfaces.ServerSwitch;
 import com.applesauce.concealvpn.model.VpnServer;
 import com.applesauce.concealvpn.utils.VpnState;
 import com.applesauce.concealvpn.utils.SharedPreference;
@@ -30,7 +32,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class MainFragment extends Fragment implements View.OnClickListener{
+public class MainFragment extends Fragment implements View.OnClickListener, ServerSwitch {
 
     private VpnServer server;
     private SharedPreference pref;
@@ -46,8 +48,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentMainBinding.inflate(getLayoutInflater());
-
-        View view = binding.root;
+        View view = binding.getRoot();
         pref = new SharedPreference(getContext());
         server = pref.getServer();
 
@@ -228,5 +229,10 @@ public class MainFragment extends Fragment implements View.OnClickListener{
 
     private void setServerFlag(String flag) {
         Glide.with(getContext()).load(flag).into(binding.selectedServerIcon);
+    }
+
+    @Override
+    public void changeServer(VpnServer server) {
+
     }
 }

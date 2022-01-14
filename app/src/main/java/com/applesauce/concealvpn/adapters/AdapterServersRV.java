@@ -25,7 +25,7 @@ public class AdapterServersRV extends RecyclerView.Adapter<AdapterServersRV.Serv
     private Context context;
     private NavObjectClickListener listener;
 
-    AdapterServersRV(ArrayList<VpnServer> servers, Context context) {
+    public AdapterServersRV(ArrayList<VpnServer> servers, Context context) {
         this.servers = servers;
         this.context = context;
         listener = (NavObjectClickListener) context;

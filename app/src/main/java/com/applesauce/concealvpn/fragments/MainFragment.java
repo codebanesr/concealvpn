@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -52,7 +53,17 @@ public class MainFragment extends Fragment implements View.OnClickListener{
 
         setServerFlag(server.getFlag());
         initializeVpnIntent();
+        initBroadCastReceiver();
         return view;
+    }
+
+    private void initBroadCastReceiver() {
+        bcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+
+            }
+        };
     }
 
 
@@ -98,7 +109,6 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         }
     }
 
-
     BroadcastReceiver bcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -130,6 +140,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
             setConnectionMetrics(duration, lastPacketReceived, byteIn, byteOut);
         }
     };
+
 
     private void setConnectionMetrics(String duration, String lastPacketReceived, String byteIn, String byteOut) {
         binding.duration.setText("Duration");
@@ -176,7 +187,10 @@ public class MainFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onResume() {
-        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(bcastReceiver);
+        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(bcastReceiver, new IntentFilter("connectionState"));
+        if(server == null) {
+            server = pref.getServer();
+        }
         super.onResume();
     }
 
@@ -206,6 +220,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
 
     private Intent prepareIntentToStartVpnService(Context context) {
         // use vpnlibrary to create intent here
+        return new Intent();
     }
 
     private void stopVpn() {

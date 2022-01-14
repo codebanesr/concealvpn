@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements NavObjectClickLis
         });
 
         transaction.add(R.id.container, fragment);
-        transaction.commit();
+        transaction.commitNow();
 
         // Server List recycler view initialize
         if (serverLists != null) {
@@ -88,9 +88,8 @@ public class MainActivity extends AppCompatActivity implements NavObjectClickLis
      * Initialize all object, listener etc
      */
     private void initializeAll() {
-        drawer = binding.drawerLayout;
-
         fragment = new MainFragment();
+        drawer = binding.drawerLayout;
         serverListRv = binding.recyclerView;
         serverListRv.setHasFixedSize(true);
 

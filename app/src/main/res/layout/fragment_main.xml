@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container"
+    tools:context="com.applesauce.concealvpn.fragments.MainFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,7 +12,6 @@
         android:orientation="vertical"
         android:paddingLeft="10dp"
         android:paddingBottom="5dp"
-        android:id="@+id/container"
         >
 
         <LinearLayout
@@ -105,4 +104,4 @@
             android:id="@+id/selectedServerIcon"
             android:src="@drawable/us_flag"/>
     </RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

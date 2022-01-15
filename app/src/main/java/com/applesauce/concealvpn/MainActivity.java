@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements NavObjectClickLis
     private RecyclerView serverListRv;
     private ArrayList<VpnServer> serverLists;
     private AdapterServersRV serverListRVAdapter;
-    private DrawerLayout drawer;
+    // private DrawerLayout drawer;
     private ServerSwitch changeServer;
 
     public static final String TAG = "CakeVPN";
@@ -62,9 +62,9 @@ public class MainActivity extends AppCompatActivity implements NavObjectClickLis
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.drawer_open, R.string.drawer_closed);
-        drawer.addDrawerListener(toggle);
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//                this, drawer, toolbar, R.string.drawer_open, R.string.drawer_closed);
+//        drawer.addDrawerListener(toggle);
 
         menuRight.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements NavObjectClickLis
             }
         });
 
-        transaction.add(R.id.container, fragment);
+        transaction.add(R.id.fragmentContainer, fragment);
         transaction.commitNow();
 
         // Server List recycler view initialize
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements NavObjectClickLis
      */
     private void initializeAll() {
         fragment = new MainFragment();
-        drawer = binding.drawerLayout;
+        //  drawer = binding.drawerLayout;
         serverListRv = binding.recyclerView;
         serverListRv.setHasFixedSize(true);
 
@@ -103,11 +103,11 @@ public class MainActivity extends AppCompatActivity implements NavObjectClickLis
      * Close navigation drawer
      */
     public void closeDrawer(){
-        if (drawer.isDrawerOpen(GravityCompat.END)) {
-            drawer.closeDrawer(GravityCompat.END);
-        } else {
-            drawer.openDrawer(GravityCompat.END);
-        }
+//        if (drawer.isDrawerOpen(GravityCompat.END)) {
+//            drawer.closeDrawer(GravityCompat.END);
+//        } else {
+//            drawer.openDrawer(GravityCompat.END);
+//        }
     }
 
     /**

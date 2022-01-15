@@ -72,16 +72,13 @@ public class MainActivity extends AppCompatActivity implements NavObjectClickLis
                 closeDrawer();
             }
         });
-
         transaction.add(R.id.container, fragment);
-        transaction.commitNow();
-
+        transaction.commit();
         // Server List recycler view initialize
         if (serverLists != null) {
             serverListRVAdapter = new AdapterServersRV(serverLists, this);
             serverListRv.setAdapter(serverListRVAdapter);
         }
-
     }
 
     /**

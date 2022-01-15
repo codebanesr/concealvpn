@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.applesauce.concealvpn.R;
 import com.applesauce.concealvpn.interfaces.NavObjectClickListener;
 import com.applesauce.concealvpn.model.VpnServer;
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 import lombok.Data;
@@ -40,7 +41,16 @@ public class AdapterServersRV extends RecyclerView.Adapter<AdapterServersRV.Serv
 
     @Override
     public void onBindViewHolder(@NonNull ServerViewHolder holder, int position) {
+        holder.server_country.setText(servers.get(position).getCountry());
+        Glide.with(context).load(servers.get(position).getFlag()).into(holder.server_icon);
 
+
+        holder.server_container.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.itemClicked(holder.getAdapterPosition());
+            }
+        });
     }
 
     protected class ServerViewHolder extends RecyclerView.ViewHolder {

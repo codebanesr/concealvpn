@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -53,8 +54,8 @@ public class AdapterServersRV extends RecyclerView.Adapter<AdapterServersRV.Serv
         });
     }
 
-    protected class ServerViewHolder extends RecyclerView.ViewHolder {
-        ConstraintLayout server_container;
+    protected static class ServerViewHolder extends RecyclerView.ViewHolder {
+        LinearLayout server_container;
         ImageView server_icon;
         TextView server_country;
         public ServerViewHolder(@NonNull View view) {

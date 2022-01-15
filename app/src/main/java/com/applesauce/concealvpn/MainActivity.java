@@ -48,9 +48,10 @@ public class MainActivity extends AppCompatActivity implements NavObjectClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         // Initialize all variable
         initializeAll();
 

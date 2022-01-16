@@ -4,21 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/server_container"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="48sp">
 
     <ImageView
         android:id="@+id/server_icon"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="120dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="388dp"
+        tools:srcCompat="@tools:sample/avatars"
+        android:background="@color/teal_700"/>
 
     <TextView
         android:id="@+id/server_country"
-        android:layout_width="240dp"
-        android:layout_height="61dp"
+        android:layout_width="284dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
         android:text="TextView"
         tools:layout_editor_absoluteX="89dp"
-        tools:layout_editor_absoluteY="388dp" />
+        tools:layout_editor_absoluteY="388dp"
+        android:background="@color/purple_200"/>
 </LinearLayout>

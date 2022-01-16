@@ -55,8 +55,6 @@ public class MainActivity extends AppCompatActivity implements NavObjectClickLis
         // Initialize all variable
         initializeAll();
 
-        ImageButton menuRight = binding.topRightButton;
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -67,12 +65,6 @@ public class MainActivity extends AppCompatActivity implements NavObjectClickLis
                 this, drawer, toolbar, R.string.drawer_open, R.string.drawer_closed);
         drawer.addDrawerListener(toggle);
 
-        menuRight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                closeDrawer();
-            }
-        });
         transaction.add(R.id.container, fragment);
         transaction.commit();
         // Server List recycler view initialize

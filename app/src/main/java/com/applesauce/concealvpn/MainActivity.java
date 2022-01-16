@@ -93,10 +93,10 @@ public class MainActivity extends AppCompatActivity implements NavObjectClickLis
      * Close navigation drawer
      */
     public void closeDrawer(){
-        if (drawer.isDrawerOpen(GravityCompat.END)) {
-            drawer.closeDrawer(GravityCompat.END);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
         } else {
-            drawer.openDrawer(GravityCompat.END);
+            drawer.openDrawer(GravityCompat.START);
         }
     }
 

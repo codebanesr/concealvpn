@@ -34,6 +34,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import de.blinkt.openvpn.core.OpenVPNService;
+
 public class MainActivity extends AppCompatActivity implements NavObjectClickListener {
     private FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
     private Fragment fragment;
